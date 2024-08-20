@@ -16,8 +16,8 @@ const server = http.createServer((req, res) => {
       console.log(err);
       res.end();
     } else {
-      res.write(data);
-      res.end();
+      // res.write(data);
+      res.end(data);
     }
   });
 
@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
 });
 
 // takes the port and hostname and a callback function tht at runs when we start listening
-server.listen(3001, "localhost", () => {
+server.listen(3000, "localhost", () => {
   console.log("Listening on port 3000");
 });
 
