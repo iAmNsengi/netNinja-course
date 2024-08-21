@@ -58,27 +58,39 @@ app.get("/single-blog", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  const blogs = [
-    {
-      title: "Yoshi finds eggs",
-      snippet: "Lorem ipsum dolor sit amet consectetur",
-    },
-    {
-      title: "Mario finds stars",
-      snippet: "Lorem ipsum dolor sit amet consectetur",
-    },
-    {
-      title: "How to defeat browser",
-      snippet: "Lorem ipsum dolor sit amet consectetur",
-    },
-  ];
-  res.render("index", { blogs });
-  //   res.sendFile("./views/index.html", { root: __dirname });
+  res.redirect("/blogs");
+  //   const blogs = [
+  //     {
+  //       title: "Yoshi finds eggs",
+  //       snippet: "Lorem ipsum dolor sit amet consectetur",
+  //     },
+  //     {
+  //       title: "Mario finds stars",
+  //       snippet: "Lorem ipsum dolor sit amet consectetur",
+  //     },
+  //     {
+  //       title: "How to defeat browser",
+  //       snippet: "Lorem ipsum dolor sit amet consectetur",
+  //     },
+  //   ];
+  //   res.render("index", { blogs });
+  //   //   res.sendFile("./views/index.html", { root: __dirname });
 });
 
 app.get("/about", (req, res) => {
   //   res.sendFile("./views/about.html", { root: __dirname });
   res.render("about");
+});
+
+app.get("/blogs", (req, res) => {
+  Blog.find()
+    .sort({ createdAt: -1 })
+    .then((data) => {
+      res.render("index", { blogs: data });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 app.get("/blogs/create", (req, res) => {
