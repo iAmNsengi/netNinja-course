@@ -24,6 +24,8 @@ app.listen(3000);
 // middleware & staticfiles
 app.use(express.static("public"));
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(morgan("dev"));
 
 // mongoose and mongo sandbox routes
@@ -91,6 +93,17 @@ app.get("/blogs", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.post("/blogs", (req, res) => {
+  const newBlog = new Blog(req.body);
+
+  newBlog
+    .save()
+    .then((result) => {
+      res.redirect("/");
+    })
+    .catch((err) => console.log(er));
 });
 
 app.get("/blogs/create", (req, res) => {
