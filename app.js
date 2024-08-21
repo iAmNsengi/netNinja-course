@@ -106,6 +106,15 @@ app.post("/blogs", (req, res) => {
     .catch((err) => console.log(er));
 });
 
+app.get("/blogs/:id", (req, res) => {
+  const { id } = req.params;
+  Blog.findById(id)
+    .then((result) => {
+      res.render("details", { blog: result, title: "Created a new blog" });
+    })
+    .catch((err) => console.log(err));
+});
+
 app.get("/blogs/create", (req, res) => {
   res.render("create");
 });
