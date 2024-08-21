@@ -28,7 +28,9 @@ const blog_individual = (req, res) => {
     .then((result) => {
       res.render("details", { blog: result, title: "Created a new blog" });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      res.status(404).render("404", { title: "Blog not found" });
+    });
 };
 
 const blog_create = (req, res) => {
