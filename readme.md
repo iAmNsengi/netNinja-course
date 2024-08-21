@@ -30,4 +30,9 @@ Schemas: defines the structure of a type of data/document
  - properties and property types
  
 
+ MVC : Model View Controller is a way of structuring our codes & files to keep them more modular and reusable and easier to read.
+
+
+ Controllers forms a link between our models and views
+
  
