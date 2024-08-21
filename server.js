@@ -4,6 +4,8 @@ const _ = require("lodash");
 
 let count = 0;
 
+
+
 // The callback function runs everytime a request is made
 const server = http.createServer((req, res) => {
   // lodash

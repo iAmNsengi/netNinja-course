@@ -23,3 +23,11 @@ Middleware: codes which runs (on the server) between getting a request and sendi
 // app.use() used to run the middleware function
 
 next() : used in the middlewares to tell express to move on from a middleware. 
+
+Mongoose: is an Object Document Mapping library (ODM) 
+
+Schemas: defines the structure of a type of data/document 
+ - properties and property types
+ 
+
+ 

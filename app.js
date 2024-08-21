@@ -1,8 +1,18 @@
 const express = require("express");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
 
 // express app
 const app = express();
+
+// connecting to mongodb
+const dbURI =
+  "mongodb+srv://nsengi:o8JmHraOxplTq8zH@cluster0.gcyna.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0";
+
+mongoose
+  .connect(dbURI)
+  .then((res) => console.log("connected to db"))
+  .catch((err) => console.log(err));
 
 // registering the view engine
 app.set("view engine", "ejs");
