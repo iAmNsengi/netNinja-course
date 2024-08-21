@@ -1,11 +1,14 @@
 const http = require("http");
 const fs = require("fs");
+const _ = require("lodash");
 
 let count = 0;
 
 // The callback function runs everytime a request is made
 const server = http.createServer((req, res) => {
-  console.log("Request made");
+  // lodash
+  const num = _.random(0, 20);
+  console.log(num);
 
   // set header content type
   //   res.setHeader("Content-Type", "text/plain");

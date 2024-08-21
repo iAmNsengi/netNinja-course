@@ -11,3 +11,6 @@ Notes:
   - 300 Range: Codes for redirects
   - 400 Range: User or client error codes
   - 500 Range: Server error codes
+
+Express:
+ A framework that allows to easily manage our routing, requests, server side logic in a more elegant way and makes our codes easier to read and mantain.
