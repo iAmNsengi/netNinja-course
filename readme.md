@@ -19,4 +19,7 @@ A framework that allows to easily manage our routing, requests, server side logi
 
 EJS templates are processed through the EJS view engine on the server.
 
-Middleware: codes which runs (on the server) between getting a request and sending a response
+Middleware: codes which runs (on the server) between getting a request and sending a response [runs from top to bottom ]
+// app.use() used to run the middleware function
+
+next() : used in the middlewares to tell express to move on from a middleware. 
