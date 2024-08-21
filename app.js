@@ -115,6 +115,15 @@ app.get("/blogs/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.delete("/blogs/:id", (req, res) => {
+  const { id } = req.params;
+  Blog.findByIdAndDelete(id)
+    .then((result) => {
+      res.json({ redirect: "/blogs" });
+    })
+    .catch((err) => console.log());
+});
+
 app.get("/blogs/create", (req, res) => {
   res.render("create");
 });
